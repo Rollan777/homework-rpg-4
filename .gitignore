@@ -1,0 +1,18 @@
+out/
+*.class
+
+# IDE and editor settings
+.idea/
+.vscode/
+*.iml
+
+# Build tool caches
+.gradle/
+build/
+target/
+bin/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
