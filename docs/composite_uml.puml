@@ -1,0 +1,30 @@
+@startuml
+
+interface CombatNode {
+    + getName() : String
+    + getHealth() : int
+    + getAttackPower() : int
+    + takeDamage(amount : int)
+    + isAlive() : boolean
+    + getChildren() : List<CombatNode>
+    + printTree(indent : String)
+}
+
+abstract class UnitLeaf
+class HeroUnit
+class EnemyUnit
+
+class PartyComposite
+class RaidGroup
+
+CombatNode <|.. UnitLeaf
+CombatNode <|.. PartyComposite
+
+UnitLeaf <|-- HeroUnit
+UnitLeaf <|-- EnemyUnit
+
+PartyComposite <|-- RaidGroup
+
+PartyComposite --> CombatNode : children
+
+@enduml
